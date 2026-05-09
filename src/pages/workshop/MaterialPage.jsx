@@ -97,7 +97,7 @@ export default function MaterialPage() {
   let _cbIdx = 0
 
   return (
-    <div className="ws-content-area">
+    <div className="ws-content-area ws-reveal-wrap">
       <div className="ws-content-header">
         <span className="ws-content-eyebrow material-tag">{item.tag}</span>
       </div>

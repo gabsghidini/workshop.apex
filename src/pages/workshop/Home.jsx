@@ -22,7 +22,7 @@ export default function Home() {
   const nextModule = TRACKED.find(id => !completedIds.has(id)) ?? TRACKED[TRACKED.length - 1]
 
   return (
-    <div className="ws-content-area">
+    <div className="ws-content-area ws-reveal-wrap">
       <div className="ws-content-header">
         <div className="ws-content-eyebrow">Workshop APEX</div>
         <h1 className="section-h">Máquina Comercial para <em>Software Houses</em></h1>

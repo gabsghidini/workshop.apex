@@ -72,7 +72,7 @@ export default function ContentPage() {
   let cbIdx = 0
 
   return (
-    <div className="ws-content-area">
+    <div className="ws-content-area ws-reveal-wrap">
       <div className="ws-content-header">
         <span className={`ws-content-eyebrow ${eyebrowClass}`}>{item.tag}</span>
       </div>
