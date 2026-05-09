@@ -23,15 +23,8 @@ export default function Login() {
     <div className="admin-page">
       <div className="admin-card">
         <div className="admin-logo-wrap">
-          <div style={{
-            width: 40, height: 40, borderRadius: 10,
-            background: 'linear-gradient(135deg, var(--blue), var(--blue-deep))',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            fontFamily: "'Clash Display', sans-serif", fontWeight: 700, fontSize: 16, color: '#fff',
-          }}>A</div>
-          <div>
-            <div className="admin-logo-text">APEX Workshop</div>
-          </div>
+          <img src="/apex-logo.png" alt="APEX" width={40} height={40} style={{ objectFit: 'contain' }} />
+          <div className="admin-logo-text">APEX Workshop</div>
         </div>
         <h1 className="admin-title">Área do Aluno</h1>
         <form className="admin-form" onSubmit={handleSubmit}>

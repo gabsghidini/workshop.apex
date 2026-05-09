@@ -32,12 +32,7 @@ export default function Layout() {
     <div className="ws-shell">
       <aside className="ws-sidebar">
         <div className="ws-sidebar-brand">
-          <div style={{
-            width: 36, height: 36, borderRadius: 9, flexShrink: 0,
-            background: 'linear-gradient(135deg, var(--blue), var(--blue-deep))',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            fontFamily: "'Clash Display', sans-serif", fontWeight: 700, fontSize: 14, color: '#fff',
-          }}>A</div>
+          <img src="/apex-logo.png" alt="APEX" width={36} height={36} style={{ objectFit: 'contain', flexShrink: 0 }} />
           <div>
             <div className="ws-sidebar-logo-text">APEX Workshop</div>
             <div className="ws-sidebar-sub">Máquina Comercial para Software Houses</div>
