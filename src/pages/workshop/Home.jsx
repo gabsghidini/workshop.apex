@@ -47,10 +47,22 @@ export default function Home() {
             {completedCount === 0 ? 'Começar agora' : 'Continuar de onde parou'} →
           </button>
         )}
-        {completedCount === TRACKED.length && (
-          <div className="ws-complete-badge">✓ Workshop concluído</div>
-        )}
       </div>
+
+      {completedCount === TRACKED.length && (
+        <div className="ws-completion-banner dbl">
+          <div className="dbl-in ws-completion-inner">
+            <div className="ws-completion-icon">✦</div>
+            <div className="ws-completion-title">Workshop concluído</div>
+            <p className="ws-completion-desc">
+              Você completou os 6 módulos e tem agora a primeira versão da sua máquina comercial. O próximo passo é execução — uma ação por semana, durante 30 dias.
+            </p>
+            <button className="ws-continue-btn" onClick={() => navigate('/workshop/mod/mod6')}>
+              Revisar o Plano de 30 Dias →
+            </button>
+          </div>
+        </div>
+      )}
 
       <div className="ws-module-grid">
         {MODULES.map((m, i) => {

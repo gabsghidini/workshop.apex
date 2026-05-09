@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 import { MATERIAL_PROMPTS } from '../data/materialPrompts'
 
 const MODEL = 'google/gemma-4-26b-a4b-it:free'
@@ -152,7 +154,11 @@ export default function AiCoach({ item, fields }) {
             )}
             {messages.map((msg, i) => (
               <div key={i} className={`ws-coach-msg ws-coach-msg-${msg.role}`}>
-                {msg.content || (loading && i === messages.length - 1 ? (
+                {msg.content ? (
+                  msg.role === 'assistant'
+                    ? <ReactMarkdown remarkPlugins={[remarkGfm]}>{msg.content}</ReactMarkdown>
+                    : msg.content
+                ) : (loading && i === messages.length - 1 ? (
                   <span className="ws-coach-typing">▌</span>
                 ) : '')}
               </div>

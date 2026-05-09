@@ -196,6 +196,18 @@ export default function MaterialPage() {
 
       <AiCoach item={item} fields={fields} />
 
+      <div className="ws-notes-section">
+        <div className="ws-notes-label">Minhas anotações</div>
+        <textarea
+          className="ws-notes-textarea"
+          key={`notes-${modId}`}
+          defaultValue={fields['__notes__'] ?? ''}
+          onBlur={e => saveField('__notes__', e.target.value)}
+          placeholder="Espaço livre para notas, insights e próximos passos..."
+          rows={5}
+        />
+      </div>
+
       <div className="ws-content-footer">
         <div className="ws-content-nav">
           {prevItem ? (

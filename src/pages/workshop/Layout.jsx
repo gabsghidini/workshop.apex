@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Outlet, NavLink, useNavigate } from 'react-router-dom'
+import { Outlet, NavLink, useNavigate, useLocation } from 'react-router-dom'
 import { supabase } from '../../lib/supabase'
 import { NAV } from '../../data/navigation'
 import { useProgress } from '../../lib/ProgressContext'
@@ -18,7 +18,11 @@ export default function Layout() {
   const [user, setUser] = useState(null)
   const [collapsed, setCollapsed] = useState({})
   const [groupCollapsed, setGroupCollapsed] = useState({})
+  const [sidebarOpen, setSidebarOpen] = useState(false)
   const navigate = useNavigate()
+  const location = useLocation()
+
+  useEffect(() => { setSidebarOpen(false) }, [location.pathname])
   const { completedIds } = useProgress()
 
   useEffect(() => {
@@ -38,13 +42,22 @@ export default function Layout() {
 
   return (
     <div className="ws-shell">
-      <aside className="ws-sidebar">
+      <aside className={`ws-sidebar ${sidebarOpen ? 'open' : ''}`}>
         <div className="ws-sidebar-brand">
           <img src="/apex-logo.png" alt="APEX" width={36} height={36} style={{ objectFit: 'contain', flexShrink: 0 }} />
-          <div>
+          <div style={{ flex: 1, minWidth: 0 }}>
             <div className="ws-sidebar-logo-text">APEX Workshop</div>
             <div className="ws-sidebar-sub">Máquina Comercial para Software Houses</div>
           </div>
+          <button
+            className="ws-sidebar-toggle"
+            onClick={() => setSidebarOpen(p => !p)}
+            aria-label="Menu"
+          >
+            <span className={`ws-hamburger ${sidebarOpen ? 'open' : ''}`}>
+              <span /><span /><span />
+            </span>
+          </button>
         </div>
 
         {user && (
