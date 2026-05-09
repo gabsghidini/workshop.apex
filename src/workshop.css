@@ -812,3 +812,177 @@
   justify-content: center;
   padding: 80px 0;
 }
+
+/* ─── AI COACH WIDGET ───────────────────────────────────────── */
+.ws-coach-wrap {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+.ws-coach-toggle {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(26,122,255,0.35);
+  background: rgba(10,12,20,0.92);
+  backdrop-filter: blur(12px);
+  color: var(--blue-bright);
+  font-size: 18px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+.ws-coach-toggle:hover {
+  background: rgba(26,122,255,0.12);
+  border-color: rgba(26,122,255,0.6);
+  transform: scale(1.06);
+}
+.ws-coach-toggle-open {
+  border-color: rgba(255,255,255,0.15);
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.ws-coach-panel {
+  width: 360px;
+  height: 500px;
+  border-radius: 18px;
+  border: 1px solid var(--glass-border);
+  background: rgba(10,12,20,0.96);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 48px rgba(0,0,0,0.6);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.ws-coach-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--glass-border);
+  flex-shrink: 0;
+}
+.ws-coach-title {
+  display: flex; align-items: center; gap: 7px;
+  font-size: 13px; font-weight: 700; color: #fff;
+  flex: 1;
+}
+.ws-coach-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 0 6px var(--blue);
+}
+.ws-coach-model-select {
+  background: var(--surface-1);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  color: var(--text-muted);
+  font-size: 11px;
+  padding: 4px 8px;
+  outline: none;
+  cursor: pointer;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  max-width: 130px;
+}
+.ws-coach-model-select:focus { border-color: rgba(26,122,255,0.4); }
+.ws-coach-close {
+  background: none; border: none;
+  color: rgba(255,255,255,0.3);
+  font-size: 13px; cursor: pointer;
+  padding: 4px; line-height: 1;
+  transition: color 0.15s;
+}
+.ws-coach-close:hover { color: rgba(255,255,255,0.7); }
+
+.ws-coach-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.08) transparent;
+}
+.ws-coach-empty {
+  font-size: 13px; color: rgba(255,255,255,0.2);
+  text-align: center; padding: 32px 16px;
+  line-height: 1.6;
+}
+.ws-coach-msg {
+  font-size: 13px; line-height: 1.65;
+  padding: 10px 14px;
+  border-radius: 12px;
+  max-width: 88%;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.ws-coach-msg-user {
+  background: rgba(26,122,255,0.12);
+  border: 1px solid rgba(26,122,255,0.15);
+  color: rgba(255,255,255,0.85);
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+.ws-coach-msg-assistant {
+  background: var(--surface-1);
+  border: 1px solid var(--glass-border);
+  color: var(--text-muted);
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+.ws-coach-typing {
+  animation: blink 0.8s step-end infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.ws-coach-input-row {
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--glass-border);
+  flex-shrink: 0;
+  align-items: flex-end;
+}
+.ws-coach-input {
+  flex: 1;
+  background: var(--surface-1);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  color: var(--text);
+  font-size: 13px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  line-height: 1.5;
+  padding: 9px 13px;
+  resize: none;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.ws-coach-input:focus { border-color: rgba(26,122,255,0.4); }
+.ws-coach-input::placeholder { color: rgba(255,255,255,0.2); }
+.ws-coach-input:disabled { opacity: 0.5; }
+.ws-coach-send {
+  width: 36px; height: 36px; flex-shrink: 0;
+  border-radius: 10px;
+  border: 1px solid rgba(26,122,255,0.3);
+  background: rgba(26,122,255,0.1);
+  color: var(--blue-bright);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
+}
+.ws-coach-send:hover:not(:disabled) {
+  background: rgba(26,122,255,0.2);
+  border-color: rgba(26,122,255,0.5);
+}
+.ws-coach-send:disabled { opacity: 0.3; cursor: not-allowed; }

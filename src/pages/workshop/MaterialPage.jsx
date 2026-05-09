@@ -5,6 +5,7 @@ import remarkGfm from 'remark-gfm'
 import { getAllItems, NAV } from '../../data/navigation'
 import { supabase } from '../../lib/supabase'
 import { useProgress } from '../../lib/ProgressContext'
+import AiCoach from '../../components/AiCoach'
 
 const contentFiles = import.meta.glob('../../content/*.md', { query: '?raw', import: 'default', eager: true })
 
@@ -192,6 +193,8 @@ export default function MaterialPage() {
           </ReactMarkdown>
         )}
       </article>
+
+      <AiCoach item={item} fields={fields} />
 
       <div className="ws-content-footer">
         <div className="ws-content-nav">
