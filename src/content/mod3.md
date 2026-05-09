@@ -400,7 +400,7 @@ Se a resposta for sim, você está no caminho.
 
 Material:
 
-- [Mapa de Grand Slam Offer](materiais_modulo3/mapa_grand_slam_offer.md)
+- [Mapa de Grand Slam Offer](/workshop/mod/mat3_gso)
 
 ## Instrução para aula
 
@@ -420,7 +420,7 @@ O objetivo é transformar uma oferta técnica em uma oferta comercial.
 
 Material:
 
-- [Mapa de Mecanismo Único](materiais_modulo3/mapa_mecanismo_unico.md)
+- [Mapa de Mecanismo Único](/workshop/mod/mat3_mecanismo)
 
 ## Instrução para aula
 
@@ -440,7 +440,7 @@ Perguntas-chave:
 
 Material:
 
-- [Gerador de Frase de Posicionamento](materiais_modulo3/gerador_frase_posicionamento.md)
+- [Gerador de Frase de Posicionamento](/workshop/mod/mat3_posicionamento)
 
 ## Instrução para aula
 
@@ -480,9 +480,9 @@ Agora que sabemos quem queremos atrair e por que nossa oferta importa, a próxim
 
 # Entregas deste módulo
 
-- [Mapa de Grand Slam Offer](materiais_modulo3/mapa_grand_slam_offer.md).
-- [Mapa de Mecanismo Único](materiais_modulo3/mapa_mecanismo_unico.md).
-- [Gerador de Frase de Posicionamento](materiais_modulo3/gerador_frase_posicionamento.md).
+- [Mapa de Grand Slam Offer](/workshop/mod/mat3_gso).
+- [Mapa de Mecanismo Único](/workshop/mod/mat3_mecanismo).
+- [Gerador de Frase de Posicionamento](/workshop/mod/mat3_posicionamento).
 
 ---
 

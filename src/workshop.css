@@ -713,3 +713,58 @@
   border-color: rgba(0,208,132,0.2);
   color: rgba(0,208,132,0.6);
 }
+
+/* ─── MATERIAL INTERACTIVE FIELDS ──────────────────────────── */
+.ws-material-cell {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  color: var(--text-muted);
+  font-size: 13px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  padding: 4px 2px;
+  outline: none;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+  border-radius: 0;
+  min-width: 60px;
+}
+.ws-material-cell:hover {
+  border-bottom-color: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.02);
+}
+.ws-material-cell:focus {
+  border-bottom-color: var(--blue);
+  color: var(--text);
+  background: rgba(26,122,255,0.04);
+}
+.ws-material-cell::placeholder { color: rgba(255,255,255,0.12); }
+
+.ws-material-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  background: var(--surface-1);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  color: rgba(255,255,255,0.8);
+  font-size: 14px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  line-height: 1.75;
+  padding: 16px 20px;
+  resize: vertical;
+  outline: none;
+  display: block;
+  transition: border-color 0.15s, background 0.15s;
+  margin-bottom: 20px;
+}
+.ws-material-textarea:focus {
+  border-color: rgba(26,122,255,0.4);
+  background: rgba(26,122,255,0.03);
+}
+.ws-material-textarea::placeholder { color: rgba(255,255,255,0.18); }
+
+.ws-material-loading {
+  display: flex;
+  justify-content: center;
+  padding: 80px 0;
+}

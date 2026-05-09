@@ -456,7 +456,7 @@ Quer que eu te envie um checklist simples para avaliar se já faz sentido criar 
 
 Material:
 
-- [Mapa de Canais Prioritários](materiais_modulo4/mapa_canais_prioritarios.md)
+- [Mapa de Canais Prioritários](/workshop/mod/mat4_canais)
 
 ## Instrução para aula
 
@@ -472,7 +472,7 @@ Regra:
 
 Material:
 
-- [Mapa de Ângulos Comerciais](materiais_modulo4/mapa_angulos_comerciais.md)
+- [Mapa de Ângulos Comerciais](/workshop/mod/mat4_angulos)
 
 ## Instrução para aula
 
@@ -491,7 +491,7 @@ O aluno deve criar 3 a 5 ângulos comerciais a partir de:
 
 Material:
 
-- [Gerador de Mensagem Inicial](materiais_modulo4/gerador_mensagem_inicial.md)
+- [Gerador de Mensagem Inicial](/workshop/mod/mat4_mensagem)
 
 ## Instrução para aula
 
@@ -542,9 +542,9 @@ Fechamento:
 
 # Entregas deste módulo
 
-- [Mapa de Canais Prioritários](materiais_modulo4/mapa_canais_prioritarios.md).
-- [Mapa de Ângulos Comerciais](materiais_modulo4/mapa_angulos_comerciais.md).
-- [Gerador de Mensagem Inicial](materiais_modulo4/gerador_mensagem_inicial.md).
+- [Mapa de Canais Prioritários](/workshop/mod/mat4_canais).
+- [Mapa de Ângulos Comerciais](/workshop/mod/mat4_angulos).
+- [Gerador de Mensagem Inicial](/workshop/mod/mat4_mensagem).
 
 ---
 

@@ -330,7 +330,7 @@ Ação:
 
 Material:
 
-- [Mapa de ICP Prioritário](materiais_modulo2/mapa_icp_prioritario.md)
+- [Mapa de ICP Prioritário](/workshop/mod/mat2_icp)
 
 ## Instrução para aula
 
@@ -352,7 +352,7 @@ Precisa escolher um foco para construir a primeira versão da máquina.
 
 Material:
 
-- [Checklist de Fit e Red Flags](materiais_modulo2/checklist_fit_redflags.md)
+- [Checklist de Fit e Red Flags](/workshop/mod/mat2_fit)
 
 ## Instrução para aula
 
@@ -370,7 +370,7 @@ Esse checklist será usado depois no CRM e na qualificação.
 
 Material:
 
-- [Roteiro BANT para Software Houses](materiais_modulo2/roteiro_bant_software_houses.md)
+- [Roteiro BANT para Software Houses](/workshop/mod/mat2_bant)
 
 ## Instrução para aula
 
@@ -412,9 +412,9 @@ Porque agora que sabemos quem queremos atrair, precisamos responder:
 
 # Entregas deste módulo
 
-- [Mapa de ICP Prioritário](materiais_modulo2/mapa_icp_prioritario.md).
-- [Checklist de Fit e Red Flags](materiais_modulo2/checklist_fit_redflags.md).
-- [Roteiro BANT para Software Houses](materiais_modulo2/roteiro_bant_software_houses.md).
+- [Mapa de ICP Prioritário](/workshop/mod/mat2_icp).
+- [Checklist de Fit e Red Flags](/workshop/mod/mat2_fit).
+- [Roteiro BANT para Software Houses](/workshop/mod/mat2_bant).
 
 ---
 

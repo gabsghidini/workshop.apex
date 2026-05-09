@@ -433,7 +433,7 @@ Regra:
 
 Material:
 
-- [Estrutura de CRM e Pipeline](materiais_modulo5/estrutura_crm_pipeline.md)
+- [Estrutura de CRM e Pipeline](/workshop/mod/mat5_crm)
 
 ## Instrução para aula
 
@@ -445,7 +445,7 @@ O aluno deve desenhar o pipeline mínimo e definir os campos obrigatórios.
 
 Material:
 
-- [Roteiro de R1 Consultiva](materiais_modulo5/roteiro_r1_consultiva.md)
+- [Roteiro de R1 Consultiva](/workshop/mod/mat5_r1)
 
 ## Instrução para aula
 
@@ -457,7 +457,7 @@ O aluno deve criar a primeira versão do roteiro de diagnóstico.
 
 Material:
 
-- [Checklist de Proposta e Sequência 8x8](materiais_modulo5/checklist_proposta_8x8.md)
+- [Checklist de Proposta e Sequência 8x8](/workshop/mod/mat5_8x8)
 
 ## Instrução para aula
 
@@ -492,9 +492,9 @@ No próximo módulo, vamos pegar tudo que foi criado na imersão e transformar e
 
 # Entregas deste módulo
 
-- [Estrutura de CRM e Pipeline](materiais_modulo5/estrutura_crm_pipeline.md).
-- [Roteiro de R1 Consultiva](materiais_modulo5/roteiro_r1_consultiva.md).
-- [Checklist de Proposta e Sequência 8x8](materiais_modulo5/checklist_proposta_8x8.md).
+- [Estrutura de CRM e Pipeline](/workshop/mod/mat5_crm).
+- [Roteiro de R1 Consultiva](/workshop/mod/mat5_r1).
+- [Checklist de Proposta e Sequência 8x8](/workshop/mod/mat5_8x8).
 
 ---
 

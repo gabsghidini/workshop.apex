@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { getAllItems, NAV } from '../../data/navigation'
 import { useProgress } from '../../lib/ProgressContext'
+import MaterialPage from './MaterialPage'
 
 const contentFiles = import.meta.glob('../../content/*.md', { query: '?raw', import: 'default', eager: true })
 
@@ -58,6 +59,8 @@ export default function ContentPage() {
     )
   }
 
+  if (item.type === 'material') return <MaterialPage />
+
   const eyebrowClass = item.type === 'callout' ? 'callout-tag' : item.type === 'upsell' ? 'upsell-tag' : item.type === 'material' ? 'material-tag' : ''
 
   const handleCheckbox = (idx, currentChecked) => {
@@ -78,6 +81,16 @@ export default function ContentPage() {
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           components={{
+            a({ href, children }) {
+              if (href?.startsWith('/')) {
+                return (
+                  <a href={href} onClick={e => { e.preventDefault(); navigate(href) }}>
+                    {children}
+                  </a>
+                )
+              }
+              return <a href={href} target="_blank" rel="noopener noreferrer">{children}</a>
+            },
             input({ node, ...props }) {
               if (props.type !== 'checkbox') return <input {...props} />
               const idx = cbIdx++

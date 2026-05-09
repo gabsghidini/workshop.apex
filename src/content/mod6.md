@@ -329,7 +329,7 @@ O PREDADOR é BPO comercial completo.
 
 Material:
 
-- [Plano de Execução de 30 Dias](materiais_modulo6/plano_execucao_30dias.md)
+- [Plano de Execução de 30 Dias](/workshop/mod/mat6_plano)
 
 ## Instrução para aula
 
@@ -341,7 +341,7 @@ O aluno deve preencher as quatro semanas com ações concretas, metas de ativida
 
 Material:
 
-- [Checklist Semanal de Revisão Comercial](materiais_modulo6/checklist_semanal.md)
+- [Checklist Semanal de Revisão Comercial](/workshop/mod/mat6_checklist)
 
 ## Instrução para aula
 
@@ -353,7 +353,7 @@ O aluno deve adaptar o checklist à realidade da sua operação e definir o dia 
 
 Material:
 
-- [Diagnóstico de Maturidade Comercial](materiais_modulo6/diagnostico_maturidade_comercial.md)
+- [Diagnóstico de Maturidade Comercial](/workshop/mod/mat6_maturidade)
 
 ## Instrução para aula
 
@@ -409,8 +409,8 @@ E uma recomendação clara de próximo passo:
 
 # Entregas deste módulo
 
-- [Plano de Execução de 30 Dias](materiais_modulo6/plano_execucao_30dias.md).
-- [Checklist Semanal de Revisão Comercial](materiais_modulo6/checklist_semanal.md).
-- [Diagnóstico de Maturidade Comercial](materiais_modulo6/diagnostico_maturidade_comercial.md).
+- [Plano de Execução de 30 Dias](/workshop/mod/mat6_plano).
+- [Checklist Semanal de Revisão Comercial](/workshop/mod/mat6_checklist).
+- [Diagnóstico de Maturidade Comercial](/workshop/mod/mat6_maturidade).
 
 ---

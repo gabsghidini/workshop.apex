@@ -267,7 +267,7 @@ Se você não tem esses dados, esse já é o primeiro diagnóstico:
 
 Agora o aluno deve preencher o primeiro material do módulo:
 
-- [Mapa de Vazamento Comercial](materiais_modulo1/mapa_vazamento_comercial.md)
+- [Mapa de Vazamento Comercial](/workshop/mod/mat1_vazamento)
 
 ## Instrução para aula
 
@@ -290,7 +290,7 @@ O objetivo é descobrir padrão.
 
 Depois do mapa, o aluno deve preencher:
 
-- [Matriz de Gargalos Comerciais](materiais_modulo1/matriz_gargalos_comerciais.md)
+- [Matriz de Gargalos Comerciais](/workshop/mod/mat1_gargalos)
 
 ## Instrução para aula
 
@@ -318,7 +318,7 @@ Regra:
 
 Para preparar o próximo módulo, o aluno deve preencher:
 
-- [Mapa dos Melhores Clientes](materiais_modulo1/mapa_melhores_clientes.md)
+- [Mapa dos Melhores Clientes](/workshop/mod/mat1_clientes)
 
 ## Instrução para aula
 
@@ -374,9 +374,9 @@ Antes de criar oferta ou canal, a pergunta é:
 
 # Entregas deste módulo
 
-- [Mapa de Vazamento Comercial](materiais_modulo1/mapa_vazamento_comercial.md).
-- [Matriz de Gargalos Comerciais](materiais_modulo1/matriz_gargalos_comerciais.md).
-- [Mapa dos Melhores Clientes](materiais_modulo1/mapa_melhores_clientes.md).
+- [Mapa de Vazamento Comercial](/workshop/mod/mat1_vazamento).
+- [Matriz de Gargalos Comerciais](/workshop/mod/mat1_gargalos).
+- [Mapa dos Melhores Clientes](/workshop/mod/mat1_clientes).
 
 ---
 
