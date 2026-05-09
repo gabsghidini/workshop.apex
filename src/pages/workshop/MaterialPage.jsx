@@ -89,6 +89,34 @@ export default function MaterialPage() {
     )
   }
 
+  const handleExport = () => {
+    const area = document.querySelector('.ws-content-area')
+    if (!area) { window.print(); return }
+
+    const swaps = []
+
+    area.querySelectorAll('input.ws-material-cell').forEach(input => {
+      const span = document.createElement('span')
+      span.className = 'ws-print-cell'
+      span.textContent = input.value || ''
+      input.after(span)
+      input.style.display = 'none'
+      swaps.push(() => { span.remove(); input.style.display = '' })
+    })
+
+    area.querySelectorAll('textarea.ws-material-textarea, textarea.ws-notes-textarea').forEach(ta => {
+      const div = document.createElement('div')
+      div.className = 'ws-print-textarea'
+      div.textContent = ta.value || ''
+      ta.after(div)
+      ta.style.display = 'none'
+      swaps.push(() => { div.remove(); ta.style.display = '' })
+    })
+
+    window.addEventListener('afterprint', () => swaps.forEach(fn => fn()), { once: true })
+    window.print()
+  }
+
   // Per-render closure counters — reset each render, incremented by component functions below
   let _tableIdx = -1
   let _rowIdx = -1
@@ -100,7 +128,7 @@ export default function MaterialPage() {
     <div className="ws-content-area ws-reveal-wrap">
       <div className="ws-content-header">
         <span className="ws-content-eyebrow material-tag">{item.tag}</span>
-        <button className="ws-export-btn" onClick={() => window.print()} title="Exportar PDF">
+        <button className="ws-export-btn" onClick={handleExport} title="Exportar PDF">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
           </svg>

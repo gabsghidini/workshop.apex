@@ -1159,39 +1159,36 @@
   }
   td { border: 1px solid #ccc !important; padding: 4px 6px !important; background: #fff !important; }
 
-  /* Editable cells */
-  .ws-material-cell {
-    background: transparent !important;
-    border: none !important;
-    border-bottom: 1px solid #bbb !important;
-    border-radius: 0 !important;
-    color: #111 !important;
-    padding: 2px 0 !important;
-    font-size: 12px !important;
-    box-shadow: none !important;
-  }
+  /* Hide original inputs (replaced by .ws-print-* by handleExport) */
+  .ws-material-cell, .ws-material-textarea, .ws-notes-textarea { display: none !important; }
 
-  /* Code textareas */
-  .ws-material-textarea {
-    background: #f9f9f9 !important;
-    border: 1px solid #ddd !important;
-    border-radius: 4px !important;
-    color: #111 !important;
-    padding: 8px 10px !important;
-    font-size: 12px !important;
-    resize: none !important;
-    box-shadow: none !important;
+  /* Print-safe replacements inserted by handleExport() */
+  .ws-print-cell {
+    display: inline-block;
+    font-size: 12px; color: #111;
+    border-bottom: 1px solid #bbb;
+    padding: 1px 0;
+    min-width: 48px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    vertical-align: bottom;
+  }
+  .ws-print-textarea {
+    display: block;
+    font-size: 12px; color: #111;
+    white-space: pre-wrap;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    line-height: 1.65;
+    padding: 8px 10px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    margin: 4px 0;
   }
 
   /* Notes */
   .ws-notes-section { border-top-color: #ddd !important; }
   .ws-notes-label { color: #666 !important; }
-  .ws-notes-textarea {
-    background: #f9f9f9 !important;
-    border-color: #ddd !important;
-    color: #111 !important;
-    box-shadow: none !important;
-  }
 
   /* Page breaks */
   h1, h2, h3 { page-break-after: avoid; }
