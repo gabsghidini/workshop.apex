@@ -66,6 +66,7 @@ export default function AiCoach({ item, fields }) {
   const [messages, setMessages] = useState([])
   const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
   const messagesEndRef = useRef(null)
   const abortRef = useRef(null)
 
@@ -82,6 +83,7 @@ export default function AiCoach({ item, fields }) {
     const text = input.trim()
     if (!text || loading) return
     setInput('')
+    setError(null)
 
     const systemPrompt = buildSystemPrompt(item, fields)
     const userMsg = { role: 'user', content: text }
@@ -115,14 +117,8 @@ export default function AiCoach({ item, fields }) {
       })
     } catch (err) {
       if (err.name !== 'AbortError') {
-        setMessages(prev => {
-          const updated = [...prev]
-          updated[updated.length - 1] = {
-            role: 'assistant',
-            content: 'Erro ao conectar com o modelo. Verifique a chave do OpenRouter.',
-          }
-          return updated
-        })
+        setMessages(prev => prev.slice(0, -1))
+        setError('Não foi possível responder agora. Tente novamente.')
       }
     } finally {
       setLoading(false)
@@ -163,6 +159,13 @@ export default function AiCoach({ item, fields }) {
             ))}
             <div ref={messagesEndRef} />
           </div>
+
+          {error && (
+            <div className="ws-coach-error">
+              {error}
+              <button className="ws-coach-error-dismiss" onClick={() => setError(null)}>✕</button>
+            </div>
+          )}
 
           <div className="ws-coach-input-row">
             <textarea

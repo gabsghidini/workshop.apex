@@ -905,6 +905,18 @@
 }
 .ws-coach-typing { animation: blink 0.8s step-end infinite; }
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+.ws-coach-error {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  margin: 0 14px 10px; padding: 10px 12px;
+  background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.18);
+  border-radius: 10px; color: #f87171; font-size: 12px; line-height: 1.4;
+}
+.ws-coach-error-dismiss {
+  background: none; border: none; color: #f87171; opacity: 0.6;
+  cursor: pointer; font-size: 11px; padding: 0; line-height: 1; flex-shrink: 0;
+  transition: opacity 0.2s;
+}
+.ws-coach-error-dismiss:hover { opacity: 1; }
 .ws-coach-input-row {
   display: flex; gap: 8px; padding: 12px 14px;
   border-top: 1px solid rgba(255,255,255,0.05);
