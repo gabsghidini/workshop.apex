@@ -1,12 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 
-const MODELS = [
-  { id: 'anthropic/claude-sonnet-4-5', label: 'Claude Sonnet 4.5' },
-  { id: 'anthropic/claude-3-haiku', label: 'Claude Haiku 3' },
-  { id: 'openai/gpt-4o', label: 'GPT-4o' },
-  { id: 'openai/gpt-4o-mini', label: 'GPT-4o Mini' },
-  { id: 'google/gemini-2.0-flash-001', label: 'Gemini 2.0 Flash' },
-]
+const MODEL = 'google/gemma-4-26b-a4b-it:free'
 
 function buildSystemPrompt(item, fields) {
   const filledValues = Object.values(fields).filter(v => v && v.trim())
@@ -67,7 +61,6 @@ async function streamCompletion({ model, messages, onToken, signal }) {
 
 export default function AiCoach({ item, fields }) {
   const [open, setOpen] = useState(false)
-  const [model, setModel] = useState(MODELS[0].id)
   const [messages, setMessages] = useState([])
   const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
@@ -101,7 +94,7 @@ export default function AiCoach({ item, fields }) {
 
     try {
       await streamCompletion({
-        model,
+        model: MODEL,
         messages: [
           { role: 'system', content: systemPrompt },
           ...newMessages,
@@ -150,15 +143,6 @@ export default function AiCoach({ item, fields }) {
               <span className="ws-coach-dot" />
               Coach APEX
             </div>
-            <select
-              className="ws-coach-model-select"
-              value={model}
-              onChange={e => setModel(e.target.value)}
-            >
-              {MODELS.map(m => (
-                <option key={m.id} value={m.id}>{m.label}</option>
-              ))}
-            </select>
             <button className="ws-coach-close" onClick={() => setOpen(false)}>✕</button>
           </div>
 
