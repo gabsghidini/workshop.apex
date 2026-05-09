@@ -39,8 +39,16 @@ export default function ContentPage() {
   const prevItem = navIndex > 0 ? NAV_ORDER[navIndex - 1] : null
   const nextItem = navIndex < NAV_ORDER.length - 1 ? NAV_ORDER[navIndex + 1] : null
 
+  const [celebrating, setCelebrating] = useState(false)
   const isTracked = TRACKED.has(modId)
   const isComplete = completedIds.has(modId)
+
+  const handleComplete = () => {
+    if (isComplete) { markIncomplete(modId); return }
+    setCelebrating(true)
+    markComplete(modId)
+    setTimeout(() => setCelebrating(false), 700)
+  }
 
   useEffect(() => {
     if (!item) return
@@ -146,8 +154,8 @@ export default function ContentPage() {
 
         {isTracked && (
           <button
-            className={`ws-complete-btn ${isComplete ? 'ws-complete-btn-done' : ''}`}
-            onClick={() => isComplete ? markIncomplete(modId) : markComplete(modId)}
+            className={`ws-complete-btn ${isComplete ? 'ws-complete-btn-done' : ''} ${celebrating ? 'ws-complete-btn-celebrate' : ''}`}
+            onClick={handleComplete}
           >
             {isComplete ? '✓ Concluído' : 'Marcar como concluído'}
           </button>

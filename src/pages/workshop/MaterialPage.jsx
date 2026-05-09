@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom'
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { getAllItems, NAV } from '../../data/navigation'
@@ -36,6 +36,8 @@ export default function MaterialPage() {
   const [userId, setUserId] = useState(null)
   const [loading, setLoading] = useState(true)
   const [exporting, setExporting] = useState(false)
+  const [saved, setSaved] = useState(false)
+  const saveTimerRef = useRef(null)
 
   const navIndex = NAV_ORDER.findIndex(n => n.id === modId)
   const prevItem = navIndex > 0 ? NAV_ORDER[navIndex - 1] : null
@@ -81,6 +83,9 @@ export default function MaterialPage() {
       { user_id: uid, item_key: `${modId}:${subKey}`, value, updated_at: new Date().toISOString() },
       { onConflict: 'user_id,item_key' }
     )
+    setSaved(true)
+    clearTimeout(saveTimerRef.current)
+    saveTimerRef.current = setTimeout(() => setSaved(false), 2000)
   }, [modId, userId])
 
   if (!item) {
@@ -345,6 +350,10 @@ export default function MaterialPage() {
             </button>
           )}
         </div>
+      </div>
+
+      <div className={`ws-save-toast ${saved ? 'ws-save-toast-visible' : ''}`}>
+        ✓ Salvo
       </div>
     </div>
   )
