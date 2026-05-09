@@ -77,6 +77,25 @@ export default function ContentPage() {
         <span className={`ws-content-eyebrow ${eyebrowClass}`}>{item.tag}</span>
       </div>
 
+      {'video' in item && (
+        <div className="ws-video-block">
+          {item.video ? (
+            <iframe
+              className="ws-video-iframe"
+              src={item.video}
+              title={item.label}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          ) : (
+            <div className="ws-video-placeholder">
+              <div className="ws-video-play-icon">▶</div>
+              <div className="ws-video-placeholder-text">Gravação disponível em breve</div>
+            </div>
+          )}
+        </div>
+      )}
+
       <article className="ws-markdown">
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}

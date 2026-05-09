@@ -11,10 +11,10 @@ export const NAV = [
     label: 'DIA 1 — Arquitetura Comercial',
     type: 'section-header',
     children: [
-      { id: 'mod1', label: 'Diagnóstico Comercial', path: '/workshop/mod/mod1', tag: 'Módulo 1', file: 'mod1' },
-      { id: 'mod2', label: 'ICP e Qualificação', path: '/workshop/mod/mod2', tag: 'Módulo 2', file: 'mod2' },
-      { id: 'mod3', label: 'Oferta e Mecanismo Único', path: '/workshop/mod/mod3', tag: 'Módulo 3', file: 'mod3' },
-      { id: 'mod4', label: 'Demanda, Canais e Ângulos', path: '/workshop/mod/mod4', tag: 'Módulo 4', file: 'mod4' },
+      { id: 'mod1', label: 'Diagnóstico Comercial', path: '/workshop/mod/mod1', tag: 'Módulo 1', file: 'mod1', video: null },
+      { id: 'mod2', label: 'ICP e Qualificação', path: '/workshop/mod/mod2', tag: 'Módulo 2', file: 'mod2', video: null },
+      { id: 'mod3', label: 'Oferta e Mecanismo Único', path: '/workshop/mod/mod3', tag: 'Módulo 3', file: 'mod3', video: null },
+      { id: 'mod4', label: 'Demanda, Canais e Ângulos', path: '/workshop/mod/mod4', tag: 'Módulo 4', file: 'mod4', video: null },
     ],
   },
   {
@@ -22,8 +22,8 @@ export const NAV = [
     label: 'DIA 2 — Operação Comercial',
     type: 'section-header',
     children: [
-      { id: 'mod5', label: 'Operação, CRM e Follow-up', path: '/workshop/mod/mod5', tag: 'Módulo 5', file: 'mod5' },
-      { id: 'mod6', label: 'Plano de Execução 30 Dias', path: '/workshop/mod/mod6', tag: 'Módulo 6', file: 'mod6' },
+      { id: 'mod5', label: 'Operação, CRM e Follow-up', path: '/workshop/mod/mod5', tag: 'Módulo 5', file: 'mod5', video: null },
+      { id: 'mod6', label: 'Plano de Execução 30 Dias', path: '/workshop/mod/mod6', tag: 'Módulo 6', file: 'mod6', video: null },
     ],
   },
   {

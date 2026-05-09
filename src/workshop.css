@@ -714,6 +714,50 @@
   color: rgba(0,208,132,0.6);
 }
 
+/* ─── VIDEO BLOCK ───────────────────────────────────────────── */
+.ws-video-block {
+  margin-bottom: 48px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  background: var(--surface-1);
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
+.ws-video-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+.ws-video-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: linear-gradient(135deg, rgba(26,122,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+  cursor: default;
+}
+.ws-video-play-icon {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(26,122,255,0.25);
+  background: rgba(26,122,255,0.08);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  color: rgba(26,122,255,0.5);
+  padding-left: 3px;
+}
+.ws-video-placeholder-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.04em;
+}
+
 /* ─── MATERIAL INTERACTIVE FIELDS ──────────────────────────── */
 .ws-material-cell {
   width: 100%;
