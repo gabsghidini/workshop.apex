@@ -7,14 +7,6 @@ export const NAV = [
     icon: '⌂',
   },
   {
-    id: 'aula0',
-    label: 'AULA 0',
-    type: 'section-header',
-    children: [
-      { id: 'mod0', label: 'Quem Somos — APEX', path: '/workshop/mod/mod0', tag: 'Aula 0', file: 'mod0' },
-    ],
-  },
-  {
     id: 'dia1',
     label: 'DIA 1 — Arquitetura Comercial',
     type: 'section-header',
@@ -23,7 +15,6 @@ export const NAV = [
       { id: 'mod2', label: 'ICP e Qualificação', path: '/workshop/mod/mod2', tag: 'Módulo 2', file: 'mod2' },
       { id: 'mod3', label: 'Oferta e Mecanismo Único', path: '/workshop/mod/mod3', tag: 'Módulo 3', file: 'mod3' },
       { id: 'mod4', label: 'Demanda, Canais e Ângulos', path: '/workshop/mod/mod4', tag: 'Módulo 4', file: 'mod4' },
-      { id: 'callout_dia1', label: 'Callout: Fechamento Dia 1', path: '/workshop/mod/callout_dia1', tag: 'Callout', file: 'callout_dia1', type: 'callout' },
     ],
   },
   {
@@ -32,9 +23,7 @@ export const NAV = [
     type: 'section-header',
     children: [
       { id: 'mod5', label: 'Operação, CRM e Follow-up', path: '/workshop/mod/mod5', tag: 'Módulo 5', file: 'mod5' },
-      { id: 'callout_mod6', label: 'Callout: Quem Executa?', path: '/workshop/mod/callout_mod6', tag: 'Callout', file: 'callout_mod6', type: 'callout' },
       { id: 'mod6', label: 'Plano de Execução 30 Dias', path: '/workshop/mod/mod6', tag: 'Módulo 6', file: 'mod6' },
-      { id: 'upsell', label: 'Upsell Pós-Imersão', path: '/workshop/mod/upsell', tag: 'Upsell', file: 'upsell', type: 'upsell' },
     ],
   },
   {
@@ -42,13 +31,6 @@ export const NAV = [
     label: 'MATERIAIS',
     type: 'section-header',
     children: [
-      {
-        id: 'mat-mod0', label: 'Módulo 0', type: 'group', children: [
-          { id: 'mat0_checklist', label: 'Checklist de Preparação', path: '/workshop/mod/mat0_checklist', tag: 'Material', file: 'mat0_checklist', type: 'material' },
-          { id: 'mat0_diagnostico', label: 'Diagnóstico Rápido', path: '/workshop/mod/mat0_diagnostico', tag: 'Material', file: 'mat0_diagnostico', type: 'material' },
-          { id: 'mat0_expectativas', label: 'Mapa de Expectativas', path: '/workshop/mod/mat0_expectativas', tag: 'Material', file: 'mat0_expectativas', type: 'material' },
-        ]
-      },
       {
         id: 'mat-mod1', label: 'Módulo 1', type: 'group', children: [
           { id: 'mat1_vazamento', label: 'Mapa de Vazamento', path: '/workshop/mod/mat1_vazamento', tag: 'Material', file: 'mat1_vazamento', type: 'material' },

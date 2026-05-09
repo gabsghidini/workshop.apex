@@ -11,7 +11,7 @@ function tagClass(type) {
   return 'tag-module'
 }
 
-const TRACKED_IDS = new Set(['mod0', 'mod1', 'mod2', 'mod3', 'mod4', 'mod5', 'mod6'])
+const TRACKED_IDS = new Set(['mod1', 'mod2', 'mod3', 'mod4', 'mod5', 'mod6'])
 const TOTAL_MODULES = TRACKED_IDS.size
 
 export default function Layout() {

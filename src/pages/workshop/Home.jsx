@@ -1,10 +1,9 @@
 import { useNavigate } from 'react-router-dom'
 import { useProgress } from '../../lib/ProgressContext'
 
-const TRACKED = ['mod0', 'mod1', 'mod2', 'mod3', 'mod4', 'mod5', 'mod6']
+const TRACKED = ['mod1', 'mod2', 'mod3', 'mod4', 'mod5', 'mod6']
 
 const MODULES = [
-  { id: 'mod0', label: 'Quem Somos — APEX', tag: 'Aula 0', dia: null, desc: 'Visão do método e por que software houses travam.' },
   { id: 'mod1', label: 'Diagnóstico Comercial', tag: 'Módulo 1', dia: 'Dia 1', desc: '8 pontos de vazamento e onde as oportunidades se perdem.' },
   { id: 'mod2', label: 'ICP e Qualificação', tag: 'Módulo 2', dia: 'Dia 1', desc: 'Green flags, red flags e BANT para software houses.' },
   { id: 'mod3', label: 'Oferta e Mecanismo Único', tag: 'Módulo 3', dia: 'Dia 1', desc: 'De "desenvolvimento sob medida" para uma transformação de negócio.' },
@@ -77,20 +76,6 @@ export default function Home() {
         })}
       </div>
 
-      <div className="ws-callouts-section">
-        <div className="ws-callouts-label">Roteiro do Instrutor</div>
-        <div className="ws-callouts-row">
-          <button onClick={() => navigate('/workshop/mod/callout_dia1')} className="ws-callout-chip">
-            Callout — Fechamento Dia 1
-          </button>
-          <button onClick={() => navigate('/workshop/mod/callout_mod6')} className="ws-callout-chip">
-            Callout — Quem Executa?
-          </button>
-          <button onClick={() => navigate('/workshop/mod/upsell')} className="ws-callout-chip ws-callout-chip-green">
-            Upsell Pós-Imersão
-          </button>
-        </div>
-      </div>
     </div>
   )
 }
