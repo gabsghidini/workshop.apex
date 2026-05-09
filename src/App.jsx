@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { supabase } from './lib/supabase'
+import { ProgressProvider } from './lib/ProgressContext'
 import Login from './pages/Login'
 import ForgotPassword from './pages/ForgotPassword'
 import ResetPassword from './pages/ResetPassword'
@@ -37,7 +38,7 @@ export default function App() {
         <Route path="/login" element={<GuestOnly><Login /></GuestOnly>} />
         <Route path="/forgot" element={<ForgotPassword />} />
         <Route path="/reset" element={<ResetPassword />} />
-        <Route path="/workshop" element={<ProtectedRoute><Layout /></ProtectedRoute>}>
+        <Route path="/workshop" element={<ProtectedRoute><ProgressProvider><Layout /></ProgressProvider></ProtectedRoute>}>
           <Route index element={<Home />} />
           <Route path="mod/:modId" element={<ContentPage />} />
         </Route>

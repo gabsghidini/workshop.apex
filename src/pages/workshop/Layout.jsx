@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Outlet, NavLink, useNavigate } from 'react-router-dom'
 import { supabase } from '../../lib/supabase'
 import { NAV } from '../../data/navigation'
+import { useProgress } from '../../lib/ProgressContext'
 
 function tagClass(type) {
   if (type === 'callout') return 'tag-callout'
@@ -10,11 +11,15 @@ function tagClass(type) {
   return 'tag-module'
 }
 
+const TRACKED_IDS = new Set(['mod0', 'mod1', 'mod2', 'mod3', 'mod4', 'mod5', 'mod6'])
+const TOTAL_MODULES = TRACKED_IDS.size
+
 export default function Layout() {
   const [user, setUser] = useState(null)
   const [collapsed, setCollapsed] = useState({})
   const [groupCollapsed, setGroupCollapsed] = useState({})
   const navigate = useNavigate()
+  const { completedIds } = useProgress()
 
   useEffect(() => {
     supabase.auth.getUser().then(({ data }) => setUser(data.user))
@@ -27,6 +32,9 @@ export default function Layout() {
 
   const toggleSection = (id) => setCollapsed(p => ({ ...p, [id]: !p[id] }))
   const toggleGroup = (id) => setGroupCollapsed(p => ({ ...p, [id]: !p[id] }))
+
+  const completedCount = [...TRACKED_IDS].filter(id => completedIds.has(id)).length
+  const pct = Math.round((completedCount / TOTAL_MODULES) * 100)
 
   return (
     <div className="ws-shell">
@@ -47,6 +55,16 @@ export default function Layout() {
             </span>
           </div>
         )}
+
+        <div className="ws-progress-bar-wrap">
+          <div className="ws-progress-label">
+            <span>{completedCount} de {TOTAL_MODULES} concluídos</span>
+            <span>{pct}%</span>
+          </div>
+          <div className="ws-progress-track">
+            <div className="ws-progress-fill" style={{ width: `${pct}%` }} />
+          </div>
+        </div>
 
         <nav className="ws-nav">
           {NAV.map(section => {
@@ -93,12 +111,19 @@ export default function Layout() {
                       </div>
                     )
                   }
+
+                  const isTrackedItem = TRACKED_IDS.has(child.id)
+                  const isComplete = isTrackedItem && completedIds.has(child.id)
+
                   return (
                     <NavLink
                       key={child.id}
                       to={child.path}
                       className={({ isActive }) => `ws-nav-item ${isActive ? 'active' : ''}`}
                     >
+                      {isTrackedItem && (
+                        <span className={`ws-nav-dot ${isComplete ? 'complete' : ''}`} />
+                      )}
                       <span style={{ flex: 1 }}>{child.label}</span>
                       <span className={`ws-nav-item-tag ${tagClass(child.type)}`}>{child.tag}</span>
                     </NavLink>
