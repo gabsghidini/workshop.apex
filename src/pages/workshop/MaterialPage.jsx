@@ -208,12 +208,13 @@ export default function MaterialPage() {
     }
   }
 
-  // Per-render closure counters — reset each render, incremented by component functions below
+  // Per-render closure counters — reset each render
   let _tableIdx = -1
   let _rowIdx = -1
   let _colIdx = -1
   let _codeIdx = -1
   let _cbIdx = 0
+  let _tableHeaders = [] // column header texts per table, used as stable key segment
 
   return (
     <div className="ws-content-area ws-reveal-wrap">
@@ -251,7 +252,7 @@ export default function MaterialPage() {
               },
 
               table({ children }) {
-                _tableIdx++; _rowIdx = -1; _colIdx = -1
+                _tableIdx++; _rowIdx = -1; _colIdx = -1; _tableHeaders = []
                 return <table>{children}</table>
               },
               tr({ children }) {
@@ -259,11 +260,18 @@ export default function MaterialPage() {
                 return <tr>{children}</tr>
               },
               th({ children }) {
+                // capture header text for stable td keys
+                const text = typeof children === 'string'
+                  ? children.trim()
+                  : (Array.isArray(children) ? children.join('') : String(_tableHeaders.length))
+                _tableHeaders.push(text || String(_tableHeaders.length))
                 return <th>{children}</th>
               },
               td({ children }) {
                 _colIdx++
-                const subKey = `td:${_tableIdx}:${_rowIdx}:${_colIdx}`
+                // use column header as key segment so adding/removing columns elsewhere doesn't shift saved data
+                const colSeg = (_tableHeaders[_colIdx] ?? String(_colIdx)).replace(/:/g, '_')
+                const subKey = `td:${_tableIdx}:${colSeg}:${_rowIdx}`
                 const initial = typeof children === 'string' ? children : ''
                 return (
                   <td>
