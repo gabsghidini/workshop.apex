@@ -1,18 +1,20 @@
 import { useState, useRef, useEffect } from 'react'
+import { MATERIAL_PROMPTS } from '../data/materialPrompts'
 
 const MODEL = 'google/gemma-4-26b-a4b-it:free'
 
 function buildSystemPrompt(item, fields) {
+  const materialContext = MATERIAL_PROMPTS[item?.id] ?? ''
   const filledValues = Object.values(fields).filter(v => v && v.trim())
-  const context = filledValues.length > 0
+  const filledContext = filledValues.length > 0
     ? `O que o usuário preencheu até agora:\n${filledValues.map(v => `— "${v}"`).join('\n')}`
     : 'O usuário ainda não preencheu nenhum campo neste material.'
 
   return `Você é o Coach APEX — um consultor comercial socrático especializado em software houses.
 
 O usuário está preenchendo o material "${item.label}" em um workshop de 2 dias sobre construção de máquina comercial.
-
-${context}
+${materialContext}
+${filledContext}
 
 Regras absolutas:
 — Nunca preencha respostas. Nunca dê "a resposta certa".
